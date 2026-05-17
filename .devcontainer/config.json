@@ -1,0 +1,75 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "550e8400-e29b-41d4-a716-446655440000",
+            "flow": ""
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "path": "/",
+          "noSSEHeader": true,
+          "keepAlivePeriod": 0
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpNoDelay": true,
+          "mark": 0,
+          "tcpKeepAliveInterval": 1,
+          "tcpKeepAliveIdle": 5,
+          "tcpUserTimeout": 10000,
+          "congestion": "bbr"
+        }
+      },
+      "sniffing": {
+        "enabled": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIPv4"
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpNoDelay": true,
+          "mark": 0,
+          "tcpKeepAliveInterval": 1,
+          "tcpKeepAliveIdle": 5,
+          "tcpUserTimeout": 10000,
+          "congestion": "bbr"
+        }
+      }
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "handshakeSec": 4,
+        "connIdleSec": 60,
+        "uplinkOnly": 1,
+        "downlinkOnly": 1,
+        "bufferSize": 512
+      }
+    },
+    "system": {
+      "statsInboundUplink": false,
+      "statsInboundDownlink": false
+    }
+  }
+}

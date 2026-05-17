@@ -9,8 +9,7 @@
       "settings": {
         "clients": [
           {
-            "id": "550e8400-e29b-41d4-a716-446655440000",
-            "flow": ""
+            "id": "550e8400-e29b-41d4-a716-446655440000"
           }
         ],
         "decryption": "none"
@@ -19,18 +18,13 @@
         "network": "xhttp",
         "xhttpSettings": {
           "mode": "packet-up",
-          "path": "/",
-          "noSSEHeader": true,
-          "keepAlivePeriod": 0
+          "path": "/"
         },
         "sockopt": {
           "tcpFastOpen": true,
           "tcpNoDelay": true,
-          "mark": 0,
           "tcpKeepAliveInterval": 1,
-          "tcpKeepAliveIdle": 5,
-          "tcpUserTimeout": 10000,
-          "congestion": "bbr"
+          "tcpKeepAliveIdle": 5
         }
       },
       "sniffing": {
@@ -48,11 +42,8 @@
         "sockopt": {
           "tcpFastOpen": true,
           "tcpNoDelay": true,
-          "mark": 0,
           "tcpKeepAliveInterval": 1,
-          "tcpKeepAliveIdle": 5,
-          "tcpUserTimeout": 10000,
-          "congestion": "bbr"
+          "tcpKeepAliveIdle": 5
         }
       }
     }
@@ -66,10 +57,6 @@
         "downlinkOnly": 1,
         "bufferSize": 512
       }
-    },
-    "system": {
-      "statsInboundUplink": false,
-      "statsInboundDownlink": false
     }
   }
 }
